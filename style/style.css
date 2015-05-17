@@ -1,0 +1,496 @@
+@-ms-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100vh;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: #2d2d2d;
+  background-color: #fff;
+  font-family: "Hind", "Open Sans", "Roboto", Arial, sans-serif;
+  font-weight: 300;
+  cursor: default;
+}
+
+h1,
+h2,
+p,
+ul,
+button {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-weight: 300;
+  font-family: inherit;
+  letter-spacing: 1px;
+}
+
+button {
+  padding: 0 6px;
+  background-color: transparent;
+  background-clip: padding-box;
+  outline: 0 none;
+  border: none;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+/** utility ***********/
+
+.clr {
+  *zoom: 1
+}
+
+.clr::before,
+.clr::after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.clr::after {
+  clear: both
+}
+
+/** viewport ******************/
+
+.viewport {
+  min-width: 320px;
+  max-width: 360px;
+  min-height: 640px;
+  margin: 0 auto 0;
+  box-shadow: 0 10px 20px 5px rgba(0,0,0,0.5);
+  position: relative;
+  overflow-x: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@media screen and (max-height: 640px) {
+  .viewport {
+    min-height: 100vh
+  }
+}
+
+/** button click poof animation ************/
+
+/**
+ * IE10 & 11 hack for not firing animation
+ * events on pseudo elements (meh)
+ */
+
+.poofing {
+  animation: threehundo-ms-ie-hack 0.3s;
+}
+
+@keyframes threehundo-ms-ie-hack {
+  to {
+    opacity: 1;
+  }
+}
+
+.poofing::after {
+  content: "";
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fff;
+  -webkit-animation: poof 0.3s;
+          animation: poof 0.3s;
+  opacity: 0;
+}
+
+@keyframes poof {
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    top: -20px;
+    right: -20px;
+    bottom: -20px;
+    left: -20px;
+  }
+}
+
+@-webkit-keyframes poof {
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    top: -20px;
+    right: -20px;
+    bottom: -20px;
+    left: -20px;
+  }
+}
+
+/**
+ * They're icons, but not..?
+ *
+ * Hamburger
+ * Staggered Hamburger
+ * Dots
+ */
+
+.fo-dots,
+.fo-bars,
+.fo-bar {
+  display: block;
+}
+
+.fo-dots,
+.fo-bars {
+  min-width: 20px;
+}
+
+.fo-bar {
+  margin: 6px auto 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.fo-bar:nth-child(1),
+.fo-bar-stagger:nth-child(1) {
+  margin-top: 4px;
+}
+
+.fo-bar-stagger:nth-child(1) {
+  width: 46.51162790697674%
+}
+
+.fo-bar-stagger:nth-child(2) {
+  width: 27.90697674418605%
+}
+
+.fo-bar-stagger:nth-child(3) {
+  width: 9.30232558139535%
+}
+
+.fo-dot {
+  width: 6px;
+  height: 6px;
+  margin: 6px 2px 0;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  display: block;
+  float: left;
+}
+
+/** header ***********/
+
+header {
+  height: 290px;
+  padding: 24px 0 120px;
+  color: #fff;
+  background-image: url(../img/bird.jpg);
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  -webkit-transform: skew(0,10deg);
+          transform: skew(0,10deg);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  top: 226px;
+  left: 0;
+  position: absolute;
+}
+
+/** header action bar (burg and dots) ****/
+
+.header-action-bar {
+  padding: 0 6px;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+.header-action-bar button {
+  height: 22px;
+}
+
+.header-action-bar button:first-of-type {
+  margin-right: 22px;
+}
+
+.header-action-bar button:last-of-type {
+  float: right;
+}
+
+/** mug and description ************/
+
+.whoami {
+  padding: 55px 16px 0;
+}
+
+.whoami img {
+  float: left;
+}
+
+.whoami h2,
+.whoami p {
+  line-height: 1.46;
+  margin-left: 76px;
+}
+
+.whoami p {
+  color: #ddd;
+}
+
+/** task actions w/ radial menu **********/
+
+.task-actions {
+  color: #fff;
+  top: -40px;
+  margin-right: 16px;
+  position: relative;
+}
+
+.task-menu-trigger,
+.task-menu {
+  background-color: #eb3b6e;
+  box-shadow: 0 2px 6px rgba(0,0,0,.26);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.task-menu-trigger {
+  width: 55px;
+  height: 55px;
+  -webkit-transition: box-shadow 0.3s,
+                      background 0.3s;
+          transition: box-shadow 0.3s,
+                      background 0.3s;
+  top: 0;
+  right: 0;
+}
+
+.open .task-menu-trigger {
+  background-color: #ce3d68;
+  box-shadow: none;
+}
+
+.task-menu {
+  width: 200px;
+  height: 200px;
+  top: -72px;
+  right: -72px;
+  -webkit-transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+                      opacity 0.3s;
+          transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+                      opacity 0.3s;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+}
+
+.open .task-menu {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.task-menu button {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  -webkit-transition: transform 0.3s 0.1s,
+                      opacity 0.3s 0.1s;
+          transition: transform 0.3s 0.1s,
+                      opacity 0.3s 0.1s;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  position: absolute;
+  opacity: 0;
+}
+
+.open .task-menu button {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.task-menu button:nth-child(1) {
+  top: 24px;
+  left: 50%;
+  margin-left: -13px;
+}
+
+.task-menu button:nth-child(2) {
+  top: 56px;
+  left: 15%;
+}
+
+.task-menu button:nth-child(3) {
+  top: 118px;
+  left: 15%;
+}
+
+.task-menu button:nth-child(4) {
+  bottom: 24px;
+  left: 50%;
+  margin-left: -13px;
+}
+
+.mod-bolt,
+.mod-boxdraw {
+  display: inline-block;
+}
+
+.mod-bolt {
+  -webkit-transform: skew(-20deg,0) translateX(-1px);
+          transform: skew(-20deg,0) translateX(-1px);
+}
+
+.mod-boxdraw {
+  -webkit-transform: translateX(-1px);
+          transform: translateX(-1px);
+}
+
+/** tasks container **********/
+
+.tasks {
+  padding: 8px 16px 0 64px;
+}
+
+.tasks::before {
+  content: "";
+  width: 1px;
+  height: -webkit-calc(100% - 232px);
+  height:    -moz-calc(100% - 232px);
+  height:     -ms-calc(100% - 232px);
+  height:         calc(100% - 232px);
+  background-color: #ddd;
+  top: 232px;
+  left: 32px;
+  position: absolute;
+}
+
+.tasks h1,
+.tasks h1 + p {
+  line-height: 1.4;
+}
+
+.tasks h1 + p {
+  color: #888;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+/** task list **************/
+
+.task-list {
+  margin-top: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/** task list item *********/
+
+.task-item {
+  padding: 16px 0;
+  position: relative;
+  -webkit-transition: height 0.3s,
+                      padding 0.3s,
+                      opacity 0.1s;
+          transition: height 0.3s,
+                      padding 0.3s,
+                      opacity 0.1s;
+}
+
+.task-item.smoosh {
+  overflow: hidden;
+  height: 0 !important;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+}
+
+/** task list item status? dot *****/
+
+.task-item::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  top: 23px;
+  left: -36px;
+  position: absolute;
+}
+
+.task-status--done::before {
+  background-color: #51c6bf;
+}
+
+.task-status--overdue::before {
+  background-color: #ee376c;
+}
+
+.task-status--future::before {
+  background-color: #eeb611;
+}
+
+.task-desc,
+.task-time {
+  color: #888;
+  font-size: 0.9em;
+}
+
+.task-time {
+  right: 0;
+  position: absolute;
+}
+
+/** task participants *******/
+
+.user-list {
+  margin-top: 8px;
+}
+
+.user-list li {
+  height: 30px;
+  margin-right: 8px;
+  float: left;
+}
+
+.user-list img {
+  border-radius: 50%;
+}

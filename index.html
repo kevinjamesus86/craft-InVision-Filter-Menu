@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InVision</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind:300,400">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <div class="viewport">
+    <header>
+      <div class="header-action-bar clr">
+        <button>
+          <span class="fo-bars">
+            <i class="fo-bar"></i>
+            <i class="fo-bar"></i>
+            <i class="fo-bar"></i>
+          </span>
+        </button>
+        Timeline
+        <button>
+          <span class="fo-dots">
+            <i class="fo-dot"></i>
+            <i class="fo-dot"></i>
+            <i class="fo-dot"></i>
+          </span>
+        </button>
+      </div>
+      <div class="whoami clr">
+        <img src="img/face-flat.png" alt="Kevin James" width="60" height="60">
+        <h2>Kevin James</h2>
+        <p>Semi Crafty Crafter</p>
+      </div>
+    </header>
+    <div class="task-actions">
+      <div class="task-menu">
+        <button data-filter-by="task-status--done" class="poof">✓</button>
+        <button data-filter-by="task-status--bolt" class="poof">
+          <span class="mod-bolt">ϟ</span>
+        </button>
+        <button data-filter-by="task-status--future" class="poof">
+          <span class="mod-boxdraw">└</span>
+        </button>
+        <button data-filter-by="task-status--overdue" class="poof">!</button>
+      </div>
+      <button class="task-menu-trigger poof">
+        <span class="fo-bars">
+          <i class="fo-bar fo-bar-stagger"></i>
+          <i class="fo-bar fo-bar-stagger"></i>
+          <i class="fo-bar fo-bar-stagger"></i>
+        </span>
+      </button>
+    </div>
+    <div class="tasks">
+      <h1>My Tasks</h1>
+      <p class="tasks-date">
+        May 12, 2015
+      </p>
+      <ul class="task-list">
+        <li class="task-item task-status--future">
+          <span class="task-time">7pm</span>
+          <span class="task-title">Music with Curt</span>
+          <p class="task-desc">Life</p>
+        </li>
+        <li class="task-item task-status--done">
+          <span class="task-time">3pm</span>
+          <span class="task-title">Eat a Burrito</span>
+          <p class="task-desc">Health</p>
+        </li>
+        <li class="task-item task-status--overdue">
+          <span class="task-time">12pm</span>
+          <span class="task-title">Finish this project</span>
+          <p class="task-desc">Work</p>
+        </li>
+        <li class="task-item task-status--done">
+          <span class="task-time">11am</span>
+          <span class="task-title">Stop injesting coffee</span>
+          <p class="task-desc">Health</p>
+        </li>
+        <li class="task-item task-status--done">
+          <span class="task-time">10am</span>
+          <span class="task-title">Morning team meeting</span>
+          <p class="task-desc">Human Interaction</p>
+          <ul class="user-list clr">
+            <li><img src="img/brad_frost-48.jpg" alt="@brad_frost" title="@brad_frost" width="30" height="30"></li>
+            <li><img src="img/pixeliris-48.jpg" alt="@pixeliris" title="@pixeliris" width="30" height="30"></li>
+            <li><img src="img/flamekaizar-48.jpg" alt="@flamekaizar" title="@flamekaizar" width="30" height="30"></li>
+            <li><img src="img/stylecampaign-48.jpg" alt="@stylecampaign" title="@stylecampaign" width="30" height="30"></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="code.js"></script>
+</body>
+</html>
